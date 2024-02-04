@@ -2,7 +2,6 @@
 import express, { Router } from "express";
 import { createnewusers, getuserdetails, getallusers ,login , logout } from "../controllers/user.js";
 import { isAuthenticated } from "../middlewares/auth.js";
-import connectuserDB from "../database/userdatabase.js";
 const router = express.Router();
 import {config} from "dotenv"
 
@@ -18,7 +17,7 @@ router.post("/login" ,login)
 router.get("/me" ,isAuthenticated,getuserdetails)
 router.get("/logout" ,logout)
 
-connectuserDB();
+
 
 
 export default router;

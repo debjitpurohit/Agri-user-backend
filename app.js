@@ -7,8 +7,8 @@ const app = express()
 //deploying nodejs app
 app.use(cors({
     //within origin we pass the frontend url, backend only allow this allow
-    // origin:[process.env.FRONTEND_URL , process.env.SECONDFRONTEND_URL],//must be pass though array 
-    origin : 'https://agri-frontend-user-3qhnb6eqf-debjitpurohit.vercel.app',
+    origin:[process.env.FRONTEND_URL , process.env.SECONDFRONTEND_URL],//must be pass though array 
+    // origin : 'https://agri-frontend-user-3qhnb6eqf-debjitpurohit.vercel.app',
     methods:["GET" , "POST","PUT","DELETE"],
     credentials: true,//by giving true backend allow cookies to give to the frontend
  }))
